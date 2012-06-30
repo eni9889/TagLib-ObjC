@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'TagLib-ObjC' target in the 'TagLib-ObjC' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif

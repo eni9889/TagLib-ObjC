@@ -1,0 +1,3 @@
+[submodule "taglib-src"]
+	path = taglib-src
+	url = https://github.com/EliaCereda/taglib.git

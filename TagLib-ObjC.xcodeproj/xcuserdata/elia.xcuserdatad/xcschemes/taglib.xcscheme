@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45084702159F3A6600264051"
-               BuildableName = "libTagLib-ObjC.a"
-               BlueprintName = "TagLib-ObjC"
+               BlueprintIdentifier = "45084A03159F479600264051"
+               BuildableName = "libtaglib.a"
+               BlueprintName = "taglib"
                ReferencedContainer = "container:TagLib-ObjC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
