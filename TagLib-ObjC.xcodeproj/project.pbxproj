@@ -100,7 +100,6 @@
 		45084A68159F47C700264051 /* xmproperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450847EC159F3B1700264051 /* xmproperties.cpp */; };
 		45084A6A159F488200264051 /* taglib_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 45084A69159F488200264051 /* taglib_config.h */; };
 		45084A71159F48E400264051 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45084706159F3A6600264051 /* Foundation.framework */; };
-		45084A77159F48E400264051 /* taglib_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 45084A76159F48E400264051 /* taglib_objc.m */; };
 		45084A7D159F48F900264051 /* libtaglib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45084A04159F479600264051 /* libtaglib.a */; };
 		45084A88159F6B8C00264051 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45084706159F3A6600264051 /* Foundation.framework */; };
 		45084A8E159F6B8C00264051 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45084A8C159F6B8C00264051 /* InfoPlist.strings */; };
@@ -210,6 +209,8 @@
 		45084B32159F725F00264051 /* wavpackproperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 450847E8159F3B1700264051 /* wavpackproperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45084B33159F725F00264051 /* xmfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 450847EB159F3B1700264051 /* xmfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45084B34159F725F00264051 /* xmproperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 450847ED159F3B1700264051 /* xmproperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45084B37159FBAD000264051 /* TagReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 45084B35159FBAD000264051 /* TagReader.h */; };
+		45084B38159FBAD000264051 /* TagReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45084B36159FBAD000264051 /* TagReader.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -429,8 +430,6 @@
 		45084A69159F488200264051 /* taglib_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taglib_config.h; sourceTree = "<group>"; };
 		45084A70159F48E400264051 /* libtaglib-objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libtaglib-objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45084A74159F48E400264051 /* taglib-objc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "taglib-objc-Prefix.pch"; sourceTree = "<group>"; };
-		45084A75159F48E400264051 /* taglib_objc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = taglib_objc.h; sourceTree = "<group>"; };
-		45084A76159F48E400264051 /* taglib_objc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taglib_objc.m; sourceTree = "<group>"; };
 		45084A83159F6B8C00264051 /* taglib-tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "taglib-tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45084A8B159F6B8C00264051 /* taglib-tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "taglib-tests-Info.plist"; sourceTree = "<group>"; };
 		45084A8D159F6B8C00264051 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -483,6 +482,8 @@
 		45084ACA159F716500264051 /* unsynch.id3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = unsynch.id3; sourceTree = "<group>"; };
 		45084ACB159F716500264051 /* xing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xing.mp3; sourceTree = "<group>"; };
 		45084ACC159F716500264051 /* zero-size-chunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "zero-size-chunk.wav"; sourceTree = "<group>"; };
+		45084B35159FBAD000264051 /* TagReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagReader.h; sourceTree = "<group>"; };
+		45084B36159FBAD000264051 /* TagReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagReader.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -953,9 +954,9 @@
 		45084A72159F48E400264051 /* taglib-objc */ = {
 			isa = PBXGroup;
 			children = (
-				45084A75159F48E400264051 /* taglib_objc.h */,
-				45084A76159F48E400264051 /* taglib_objc.m */,
 				45084A73159F48E400264051 /* Supporting Files */,
+				45084B35159FBAD000264051 /* TagReader.h */,
+				45084B36159FBAD000264051 /* TagReader.mm */,
 			);
 			path = "taglib-objc";
 			sourceTree = "<group>";
@@ -1114,6 +1115,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45084B37159FBAD000264051 /* TagReader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1375,7 +1377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45084A77159F48E400264051 /* taglib_objc.m in Sources */,
+				45084B38159FBAD000264051 /* TagReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,6 +1473,7 @@
 				);
 				DSTROOT = /tmp/taglib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/taglib-src/taglib\"/**";
 				INSTALL_PATH = /usr/;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1488,6 +1491,7 @@
 				);
 				DSTROOT = /tmp/taglib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/taglib-src/taglib\"/**";
 				INSTALL_PATH = /usr/;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1503,6 +1507,7 @@
 				DSTROOT = /tmp/taglib_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taglib-objc/taglib-objc-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/taglib-src/taglib\"/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1516,6 +1521,7 @@
 				DSTROOT = /tmp/taglib_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taglib-objc/taglib-objc-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/taglib-src/taglib\"/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
