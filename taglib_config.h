@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef TagLib_ObjC_taglib_config_h
-#define TagLib_ObjC_taglib_config_h
+#ifndef TAGLIB_CONFIG_H
+#define TAGLIB_CONFIG_H
 
 #define   TAGLIB_WITH_ASF 1
 #define   TAGLIB_WITH_MP4 1
