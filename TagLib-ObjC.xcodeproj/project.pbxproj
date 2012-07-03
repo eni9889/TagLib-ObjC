@@ -1769,7 +1769,10 @@
 		45084A0D159F479600264051 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				DSTROOT = /tmp/taglib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/taglib-src/taglib\"/**";
@@ -1783,7 +1786,10 @@
 		45084A0E159F479600264051 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				DSTROOT = /tmp/taglib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/taglib-src/taglib\"/**";
@@ -1797,7 +1803,10 @@
 		45084A79159F48E400264051 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				DEAD_CODE_STRIPPING = YES;
 				DSTROOT = /tmp/taglib_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1812,7 +1821,10 @@
 		45084A7A159F48E400264051 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				DEAD_CODE_STRIPPING = YES;
 				DSTROOT = /tmp/taglib_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
