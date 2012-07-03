@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>taglib-objc-tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>taglib-objc.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -58,6 +63,11 @@
 			<true/>
 		</dict>
 		<key>45084A82159F6B8C00264051</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45313D3F15A10A3F0092354D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

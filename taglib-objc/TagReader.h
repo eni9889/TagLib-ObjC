@@ -13,6 +13,8 @@
 - (id)initWithFileAtPath:(NSString *)path;  //Designated initializer
 - (void)loadFileAtPath:(NSString *)path;
 
+- (BOOL)save;
+
 @property (readonly) NSString *path;
 
 @property (nonatomic) NSString *title;
