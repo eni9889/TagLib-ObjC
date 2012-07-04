@@ -149,15 +149,17 @@ static inline TagLib::String TLStr(NSString *_string)
     if (file != NULL) {
         ID3v2::Tag *tag = file->ID3v2Tag();
         if (tag) {
-            ID3v2::AttachedPictureFrame *picture = new ID3v2::AttachedPictureFrame();
-            
-            TagLib::ByteVector bv = ByteVector((const char *)[albumArt bytes], [albumArt length]);
-            picture->setPicture(bv);
-            picture->setMimeType(String("image/jpg"));
-            picture->setType(ID3v2::AttachedPictureFrame::FrontCover);
-            
             tag->removeFrames("APIC");
-            tag->addFrame(picture);
+            if (albumArt != nil && [albumArt length] > 0) {
+                ID3v2::AttachedPictureFrame *picture = new ID3v2::AttachedPictureFrame();
+                
+                TagLib::ByteVector bv = ByteVector((const char *)[albumArt bytes], [albumArt length]);
+                picture->setPicture(bv);
+                picture->setMimeType(String("image/jpg"));
+                picture->setType(ID3v2::AttachedPictureFrame::FrontCover);
+                
+                tag->addFrame(picture);
+            }
         }
     }
 }
