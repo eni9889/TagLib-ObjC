@@ -14,6 +14,7 @@
 - (void)loadFileAtPath:(NSString *)path;
 
 - (BOOL)save;
+- (BOOL)doubleSave; //Some filetypes require being saved twice (unknown reasons), if saving with - save doesn't work, try -doubleSave. 
 
 @property (readonly) NSString *path;
 

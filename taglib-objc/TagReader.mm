@@ -65,9 +65,11 @@ static inline TagLib::String TLStr(NSString *_string)
 
 - (BOOL)save
 {
-    _file.save();
-    sleep(1);
-    return YES;
+    return (BOOL)_file.save();
+}
+- (BOOL)doubleSave
+{
+    return [self save] && [self save];
 }
 
 - (NSString *)title

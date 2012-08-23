@@ -27,7 +27,7 @@
 #define TEST_GENRE_2 @"uTest!"
 
 @implementation TagReaderTests
-- (void)saveTagReaderWithName:(NSString *)name extension:(NSString *)ext
+- (void)saveTagReaderWithName:(NSString *)name extension:(NSString *)ext doubleSave:(BOOL)doubleSave
 {
     NSString *originalPath = [[NSBundle bundleForClass:[self class]] pathForResource:name ofType:ext];
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -50,8 +50,11 @@
     t.comment = TEST_COMMENT;
     t.track = TEST_TRACK;
     t.genre = TEST_GENRE;
-    STAssertTrue([t save], @"Save failed");
-    
+    if (doubleSave == NO) {
+        STAssertTrue([t save], @"Save failed");
+    } else {
+        STAssertTrue([t doubleSave], @"Double save failed");
+    }
     
     t = [[TagReader alloc] initWithFileAtPath:filePath];
     STAssertNotNil(t, @"(2) Returned a nil TagReader");
@@ -71,7 +74,11 @@
     t.comment = TEST_COMMENT_2;
     t.track = TEST_TRACK_2;
     t.genre = TEST_GENRE_2;
-    STAssertTrue([t save], @"Save failed");
+    if (doubleSave == NO) {
+        STAssertTrue([t save], @"Save failed");
+    } else {
+        STAssertTrue([t doubleSave], @"Double save failed");
+    }
     
     t = [[TagReader alloc] initWithFileAtPath:filePath];
     STAssertNotNil(t, @"(2) Returned a nil TagReader");
@@ -87,57 +94,57 @@
 
 - (void)testMusepack
 {
-    [self saveTagReaderWithName:@"click" extension:@"mpc"];
+    [self saveTagReaderWithName:@"click" extension:@"mpc" doubleSave:YES];
 }
 
 - (void)testASF
 {
-    [self saveTagReaderWithName:@"silence-1" extension:@"wma"];
+    [self saveTagReaderWithName:@"silence-1" extension:@"wma" doubleSave:NO];
 }
 
 - (void)testVorbis
 {
-    [self saveTagReaderWithName:@"empty" extension:@"ogg"];
+    [self saveTagReaderWithName:@"empty" extension:@"ogg" doubleSave:NO];
 }
 
 - (void)testSpeex
 {
-    [self saveTagReaderWithName:@"empty" extension:@"spx"];
+    [self saveTagReaderWithName:@"empty" extension:@"spx" doubleSave:NO];
 }
 
 - (void)testFLAC
 {
-    [self saveTagReaderWithName:@"no-tags" extension:@"flac"];
+    [self saveTagReaderWithName:@"no-tags" extension:@"flac" doubleSave:NO];
 }
 
 - (void)testMP3
 {
-    [self saveTagReaderWithName:@"xing" extension:@"mp3"];
+    [self saveTagReaderWithName:@"xing" extension:@"mp3" doubleSave:NO];
 }
 
 - (void)testTrueAudio
 {
-    [self saveTagReaderWithName:@"empty" extension:@"tta"];
+    [self saveTagReaderWithName:@"empty" extension:@"tta" doubleSave:YES];
 }
 
 - (void)testMP4_1
 {
-    [self saveTagReaderWithName:@"has-tags" extension:@"m4a"];
+    [self saveTagReaderWithName:@"has-tags" extension:@"m4a" doubleSave:YES];
 }
 
 - (void)testMP4_2
 {
-    [self saveTagReaderWithName:@"no-tags" extension:@"m4a"];
+    [self saveTagReaderWithName:@"no-tags" extension:@"m4a" doubleSave:YES];
 }
 
 - (void)testMP4_3
 {
-    [self saveTagReaderWithName:@"no-tags" extension:@"3g2"];
+    [self saveTagReaderWithName:@"no-tags" extension:@"3g2" doubleSave:YES];
 }
 
 - (void)testAPE
 {
-    [self saveTagReaderWithName:@"mac-399" extension:@"ape"];
+    [self saveTagReaderWithName:@"mac-399" extension:@"ape" doubleSave:YES];
 }
 
 @end
