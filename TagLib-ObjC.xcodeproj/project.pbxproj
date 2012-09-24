@@ -262,6 +262,8 @@
 		45313DB215A10EA00092354D /* unsynch.id3 in Resources */ = {isa = PBXBuildFile; fileRef = 45313D8515A10EA00092354D /* unsynch.id3 */; };
 		45313DB315A10EA00092354D /* xing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45313D8615A10EA00092354D /* xing.mp3 */; };
 		45313DB415A10EA00092354D /* zero-size-chunk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45313D8715A10EA00092354D /* zero-size-chunk.wav */; };
+		45EE0B4C160E3F1C00B4072D /* ownershipframe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45EE0B4A160E3F1C00B4072D /* ownershipframe.cpp */; };
+		45EE0B4D160E3F1C00B4072D /* ownershipframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 45EE0B4B160E3F1C00B4072D /* ownershipframe.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -595,6 +597,8 @@
 		45313D8515A10EA00092354D /* unsynch.id3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = unsynch.id3; path = "taglib-src/tests/data/unsynch.id3"; sourceTree = SOURCE_ROOT; };
 		45313D8615A10EA00092354D /* xing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = xing.mp3; path = "taglib-src/tests/data/xing.mp3"; sourceTree = SOURCE_ROOT; };
 		45313D8715A10EA00092354D /* zero-size-chunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "zero-size-chunk.wav"; path = "taglib-src/tests/data/zero-size-chunk.wav"; sourceTree = SOURCE_ROOT; };
+		45EE0B4A160E3F1C00B4072D /* ownershipframe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ownershipframe.cpp; sourceTree = "<group>"; };
+		45EE0B4B160E3F1C00B4072D /* ownershipframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ownershipframe.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -888,6 +892,8 @@
 				45084768159F3B1700264051 /* commentsframe.h */,
 				45084769159F3B1700264051 /* generalencapsulatedobjectframe.cpp */,
 				4508476A159F3B1700264051 /* generalencapsulatedobjectframe.h */,
+				45EE0B4A160E3F1C00B4072D /* ownershipframe.cpp */,
+				45EE0B4B160E3F1C00B4072D /* ownershipframe.h */,
 				4508476B159F3B1700264051 /* popularimeterframe.cpp */,
 				4508476C159F3B1700264051 /* popularimeterframe.h */,
 				4508476D159F3B1700264051 /* privateframe.cpp */,
@@ -1307,6 +1313,7 @@
 				45084B33159F725F00264051 /* xmfile.h in Headers */,
 				45084B34159F725F00264051 /* xmproperties.h in Headers */,
 				45084A6A159F488200264051 /* taglib_config.h in Headers */,
+				45EE0B4D160E3F1C00B4072D /* ownershipframe.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1655,6 +1662,7 @@
 				45084A66159F47C700264051 /* wavpackproperties.cpp in Sources */,
 				45084A67159F47C700264051 /* xmfile.cpp in Sources */,
 				45084A68159F47C700264051 /* xmproperties.cpp in Sources */,
+				45EE0B4C160E3F1C00B4072D /* ownershipframe.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1729,6 +1737,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1754,6 +1763,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1811,7 +1821,6 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					armv6,
 				);
-				DEAD_CODE_STRIPPING = YES;
 				DSTROOT = /tmp/taglib_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taglib-objc/taglib-objc-Prefix.pch";
@@ -1831,7 +1840,6 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 					armv6,
 				);
-				DEAD_CODE_STRIPPING = YES;
 				DSTROOT = /tmp/taglib_objc.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "taglib-objc/taglib-objc-Prefix.pch";
