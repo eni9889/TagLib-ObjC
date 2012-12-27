@@ -74,7 +74,14 @@ static inline TagLib::String TLStr(NSString *_string)
 
 - (NSString *)title
 {
-    return NSStr(_file.tag()->title());
+    if (_file.tag())
+    {
+        return NSStr(_file.tag()->title());
+    }
+    else{
+        return @"";
+    }
+    
 }
 - (void)setTitle:(NSString *)title
 {
@@ -82,7 +89,13 @@ static inline TagLib::String TLStr(NSString *_string)
 }
 - (NSString *)artist
 {
-    return NSStr(_file.tag()->artist());
+    if (_file.tag())
+    {
+        return NSStr(_file.tag()->artist());
+    }
+    
+    return @"";
+    
 }
 - (void)setArtist:(NSString *)artist
 {
@@ -90,7 +103,12 @@ static inline TagLib::String TLStr(NSString *_string)
 }
 - (NSString *)album
 {
-    return NSStr(_file.tag()->album());
+    if (_file.tag())
+    {
+        return NSStr(_file.tag()->album());
+    }
+    
+    return @"";
 }
 - (void)setAlbum:(NSString *)album
 {
@@ -98,7 +116,12 @@ static inline TagLib::String TLStr(NSString *_string)
 }
 - (NSNumber *)year
 {
-    return [NSNumber numberWithUnsignedInt:_file.tag()->year()];
+    if (_file.tag())
+    {
+        return [NSNumber numberWithUnsignedInt:_file.tag()->year()];
+    }
+    
+    return [NSNumber numberWithUnsignedInt:2000];
 }
 - (void)setYear:(NSNumber *)year
 {
@@ -106,7 +129,12 @@ static inline TagLib::String TLStr(NSString *_string)
 }
 - (NSString *)comment
 {
-    return NSStr(_file.tag()->comment());
+    if (_file.tag())
+    {
+        return NSStr(_file.tag()->comment());
+    }
+    
+    return @"";
 }
 - (void)setComment:(NSString *)comment
 {
