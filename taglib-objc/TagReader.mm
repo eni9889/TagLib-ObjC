@@ -9,11 +9,11 @@
 #import "TagReader.h"
 
 #include <fileref.h>
-#include <mpegfile.h>
-#include <id3v2tag.h>
-#include <id3v2frame.h>
-#include <id3v2header.h>
-#include <attachedpictureframe.h>
+#include "mpegfile.h"
+#include "id3v2tag.h"
+#include "id3v2frame.h"
+#include "id3v2header.h"
+#include "attachedpictureframe.h"
 
 using namespace TagLib;
 
